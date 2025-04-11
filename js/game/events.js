@@ -2,6 +2,7 @@
 
 // Fonction pour générer un arbre doré aléatoire
 function spawnGoldenTree() {
+    console.log('spawnGoldenTree()');
     if (goldenTreeActive || Math.random() > 0.1) {
         goldenTreeActive = true;
 
@@ -55,6 +56,7 @@ function spawnGoldenTree() {
 
 // Fonction pour créer un événement spécial aléatoire
 function createSpecialEvent() {
+    console.log("createSpecialEvent()");
     if (specialEventActive || Math.random() > 0.05) {
         specialEventActive = true;
 
