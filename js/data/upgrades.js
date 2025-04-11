@@ -8,7 +8,7 @@ const upgrades = [
         costMultiplier: 1.8,
         count: 0,
         effect: function() {
-            treesPerClick *= 2;
+            treesPerClick += 1;
         }
     },
     {
