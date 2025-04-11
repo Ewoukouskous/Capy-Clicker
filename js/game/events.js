@@ -8,7 +8,7 @@ function spawnGoldenTree() {
 
         const goldenTree = document.createElement('img');
         goldenTree.className = 'golden-tree';
-        goldenTree.src = 'http://localhost:63342/Capy-Clicker/assets/golden-tree.png';
+        goldenTree.src = './assets/golden-tree.png'; // Remplacer par l'URL de l'image de l'arbre doré
         goldenTree.style.zIndex = '1000'; // Remplacer par une image d'arbre doré
 
         document.body.appendChild(goldenTree);
