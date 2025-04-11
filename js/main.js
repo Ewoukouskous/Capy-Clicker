@@ -14,7 +14,7 @@ function initGame() {
     }
 
     // Attacher les événements
-    capyImage.addEventListener('click', clickCapy);
+    treeImage.addEventListener('click', clickTree);
 
     soundToggle.addEventListener('click', () => {
         soundEnabled = !soundEnabled;
@@ -27,7 +27,7 @@ function initGame() {
 
     // Démarrer les timers
     setInterval(gameTick, 1000); // Tick principal chaque seconde
-    setInterval(spawnGoldenCapy, 30000); // Essai de capybara doré toutes les 30 secondes
+    setInterval(spawnGoldenTree, 30000); // Essai d'arbre doré toutes les 30 secondes
     setInterval(createSpecialEvent, 120000); // Essai d'événement spécial toutes les 2 minutes
 
     // Sauvegarde automatique

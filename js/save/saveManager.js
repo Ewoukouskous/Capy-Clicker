@@ -3,22 +3,22 @@
 // Fonction pour sauvegarder le jeu
 function saveGame() {
     const gameData = {
-        capyCount,
-        capysPerClick,
-        capysPerSecond,
+        treeCount,
+        treesPerClick,
+        treesPerSecond,
         soundEnabled,
         upgradesCounts: upgrades.map(u => ({ id: u.id, count: u.count })),
         achievementsUnlocked: achievements.map(a => ({ id: a.id, unlocked: a.unlocked })),
         lastSave: Date.now()
     };
 
-    localStorage.setItem('capyClickerSave', JSON.stringify(gameData));
+    localStorage.setItem('treeClickerSave', JSON.stringify(gameData));
     showNotification('Jeu sauvegardé!');
 }
 
 // Fonction pour charger le jeu
 function loadGame() {
-    const savedData = localStorage.getItem('capyClickerSave');
+    const savedData = localStorage.getItem('treeClickerSave');
 
     if (!savedData) return false;
 
@@ -26,9 +26,9 @@ function loadGame() {
         const gameData = JSON.parse(savedData);
 
         // Restaurer les valeurs principales
-        capyCount = gameData.capyCount || 0;
-        capysPerClick = gameData.capysPerClick || 1;
-        capysPerSecond = gameData.capysPerSecond || 0;
+        treeCount = gameData.treeCount || 0;
+        treesPerClick = gameData.treesPerClick || 1;
+        treesPerSecond = gameData.treesPerSecond || 0;
         soundEnabled = gameData.soundEnabled !== undefined ? gameData.soundEnabled : true;
 
         // Restaurer les améliorations
@@ -65,14 +65,14 @@ function loadGame() {
         const elapsedTime = (Date.now() - lastSave) / 1000; // en secondes
 
         // Bonus pour le temps hors ligne (maximum 8 heures)
-        if (elapsedTime > 10 && capysPerSecond > 0) {
+        if (elapsedTime > 10 && treesPerSecond > 0) {
             const offlineTime = Math.min(elapsedTime, 8 * 60 * 60); // Maximum 8 heures
-            const offlineBonus = Math.floor(capysPerSecond * offlineTime * 0.5); // 50% de la production normale
+            const offlineBonus = Math.floor(treesPerSecond * offlineTime * 0.5); // 50% de la production normale
 
             if (offlineBonus > 0) {
-                capyCount += offlineBonus;
+                treeCount += offlineBonus;
                 updateDisplay();
-                showNotification(`Bienvenue! Vous avez gagné ${formatNumber(offlineBonus)} capybaras pendant votre absence!`);
+                showNotification(`Bienvenue! Vous avez gagné ${formatNumber(offlineBonus)} arbres pendant votre absence!`);
             }
         }
 
@@ -86,7 +86,7 @@ function loadGame() {
 // Fonction pour réinitialiser le jeu
 function resetGame() {
     if (confirm('Êtes-vous sûr de vouloir réinitialiser le jeu? Toute progression sera perdue.')) {
-        localStorage.removeItem('capyClickerSave');
+        localStorage.removeItem('treeClickerSave');
         location.reload();
     }
 }

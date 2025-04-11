@@ -1,57 +1,57 @@
 // data/achievements.js - Configuration des réalisations
 const achievements = [
     {
-        id: 'first-capy',
-        name: 'Premier Capybara',
-        description: 'Cliquez pour obtenir votre premier capybara',
-        icon: '🐹',
-        requirement: () => capyCount >= 1,
+        id: 'first-tree',
+        name: 'Premier Arbre',
+        description: 'Cliquez pour planter votre premier arbre',
+        icon: '🌱',
+        requirement: () => treeCount >= 1,
         unlocked: false
     },
     {
-        id: 'capy-collector',
-        name: 'Collectionneur de Capybaras',
-        description: 'Possédez 100 capybaras',
+        id: 'tree-collector',
+        name: 'Créateur de forêt',
+        description: 'Possédez 100 arbres',
         icon: '🏆',
-        requirement: () => capyCount >= 100,
+        requirement: () => treeCount >= 100,
         unlocked: false
     },
     {
-        id: 'capy-enthusiast',
-        name: 'Enthousiaste des Capybaras',
-        description: 'Possédez 1,000 capybaras',
+        id: 'tree-enthusiast',
+        name: 'Une nouvelle espèce menacée s\'est installée dans votre forêt',
+        description: 'Possédez 1,000 arbres',
         icon: '🌟',
-        requirement: () => capyCount >= 1000,
+        requirement: () => treeCount >= 1000,
         unlocked: false
     },
     {
-        id: 'capy-master',
-        name: 'Maître Capybara',
-        description: 'Possédez 10,000 capybaras',
+        id: 'tree-master',
+        name: 'Votre forêt est reconnue comme reserve forestière',
+        description: 'Possédez 10,000 arbres',
         icon: '👑',
-        requirement: () => capyCount >= 10000,
+        requirement: () => treeCount >= 10000,
         unlocked: false
     },
     {
-        id: 'capy-farm-owner',
-        name: 'Propriétaire de Ferme',
-        description: 'Achetez votre première ferme de capybaras',
+        id: 'tree-farm-owner',
+        name: 'Acteur majeur de la reforestation',
+        description: 'Achetez votre première OMS',
         icon: '🏡',
-        requirement: () => upgrades.find(u => u.id === 'capy-farm').count > 0,
+        requirement: () => upgrades.find(u => u.id === 'tree-farm').count > 0,
         unlocked: false
     },
     {
-        id: 'capy-millionaire',
-        name: 'Millionnaire de Capybaras',
-        description: 'Possédez 1,000,000 de capybaras',
+        id: 'tree-millionaire',
+        name: 'Millionnaire d\'Arbres',
+        description: 'Possédez 1,000,000 d\'arbres',
         icon: '💰',
-        requirement: () => capyCount >= 1000000,
+        requirement: () => treeCount >= 1000000,
         unlocked: false
     },
     {
         id: 'golden-finder',
         name: 'Chercheur d\'Or',
-        description: 'Trouvez un capybara doré',
+        description: 'Trouvez un arbre doré',
         icon: '✨',
         requirement: () => false, // Sera débloqué manuellement
         unlocked: false

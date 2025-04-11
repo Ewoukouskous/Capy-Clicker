@@ -2,85 +2,85 @@
 const upgrades = [
     {
         id: 'better-click',
-        name: 'Meilleur clic',
-        description: 'Double la puissance de votre clic',
+        name: 'Meilleur plantation',
+        description: 'Double la puissance de vos plantations',
         baseCost: 15,
         costMultiplier: 1.8,
         count: 0,
         effect: function() {
-            capysPerClick *= 2;
+            treesPerClick *= 2;
         }
     },
     {
-        id: 'capy-friend',
-        name: 'Ami Capybara',
-        description: 'Ajoute 0.5 capybaras par seconde',
+        id: 'tree-friend',
+        name: 'Ami Arbre',
+        description: 'Ajoute 0.5 arbres par seconde',
         baseCost: 25,
         costMultiplier: 1.5,
         count: 0,
-        capysPerSecondBonus: 0.5,
+        treesPerSecondBonus: 0.5,
         effect: function() {
-            capysPerSecond += this.capysPerSecondBonus;
+            treesPerSecond += this.treesPerSecondBonus;
         }
     },
     {
-        id: 'baby-capy',
-        name: 'Bébé Capybara',
-        description: 'Produit 1 capybara par seconde',
+        id: 'baby-tree',
+        name: 'Jeune Pousse',
+        description: 'Produit 1 arbre par seconde',
         baseCost: 100,
         costMultiplier: 1.2,
         count: 0,
-        capysPerSecondBonus: 1,
+        treesPerSecondBonus: 1,
         effect: function() {
-            capysPerSecond += this.capysPerSecondBonus;
+            treesPerSecond += this.treesPerSecondBonus;
         }
     },
     {
-        id: 'capy-family',
-        name: 'Famille Capybara',
-        description: 'Produit 5 capybaras par seconde',
+        id: 'tree-family',
+        name: 'Petite association',
+        description: 'Produit 5 arbres par seconde',
         baseCost: 500,
         costMultiplier: 1.3,
         count: 0,
-        capysPerSecondBonus: 5,
+        treesPerSecondBonus: 5,
         effect: function() {
-            capysPerSecond += this.capysPerSecondBonus;
+            treesPerSecond += this.treesPerSecondBonus;
         }
     },
     {
-        id: 'capy-farm',
-        name: 'Ferme de Capybaras',
-        description: 'Produit 15 capybaras par seconde',
+        id: 'tree-farm',
+        name: 'OMS pour la reforestation',
+        description: 'Produit 15 arbres par seconde',
         baseCost: 3000,
         costMultiplier: 1.4,
         count: 0,
-        capysPerSecondBonus: 15,
+        treesPerSecondBonus: 15,
         effect: function() {
-            capysPerSecond += this.capysPerSecondBonus;
+            treesPerSecond += this.treesPerSecondBonus;
         }
     },
     {
-        id: 'capy-sanctuary',
-        name: 'Sanctuaire de Capybaras',
-        description: 'Produit 50 capybaras par seconde',
+        id: 'tree-sanctuary',
+        name: 'Forêt Protégée',
+        description: 'Produit 50 arbres par seconde',
         baseCost: 10000,
         costMultiplier: 1.5,
         count: 0,
-        capysPerSecondBonus: 50,
+        treesPerSecondBonus: 50,
         effect: function() {
-            capysPerSecond += this.capysPerSecondBonus;
+            treesPerSecond += this.treesPerSecondBonus;
         }
     },
     {
-        id: 'capy-nation',
-        name: 'Nation Capybara',
-        description: 'Produit 200 capybaras par seconde',
+        id: 'tree-nation',
+        name: 'Nation Forestière',
+        description: 'Produit 200 arbres par seconde',
         baseCost: 50000,
         costMultiplier: 1.6,
         count: 0,
-        capysPerSecondBonus: 200,
+        treesPerSecondBonus: 200,
         effect: function() {
-            capysPerSecond += this.capysPerSecondBonus;
+            treesPerSecond += this.treesPerSecondBonus;
         }
     }
 ];

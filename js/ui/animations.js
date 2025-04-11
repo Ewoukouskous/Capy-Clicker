@@ -1,10 +1,22 @@
 // ui/animations.js - Animations pour l'interface
 
-// Fonction pour créer une animation de clic
+// Fonction pour animer l'image au clic
 function createClickAnimation() {
+    // Animation de l'image principale
+    const image = document.querySelector('.clicker-area img'); // Sélectionnez votre image
+
+    // Ajouter une classe pour l'animation
+    image.classList.add('click-pulse');
+
+    // Retirer la classe après l'animation pour permettre de futures animations
+    setTimeout(() => {
+        image.classList.remove('click-pulse');
+    }, 300);
+
+    // Effet de texte existant
     const clickEffect = document.createElement('div');
     clickEffect.className = 'click-effect';
-    clickEffect.textContent = '+' + capysPerClick;
+    clickEffect.textContent = '+' + treesPerClick;
 
     const xPos = Math.random() * 100 - 50;
     const yPos = Math.random() * 60 - 30;

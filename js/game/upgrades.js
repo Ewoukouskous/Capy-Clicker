@@ -13,8 +13,8 @@ function buyUpgrade(upgradeId) {
 
     const cost = getUpgradeCost(upgrade);
 
-    if (capyCount >= cost) {
-        capyCount -= cost;
+    if (treeCount >= cost) {
+        treeCount -= cost;
         upgrade.count++;
         upgrade.effect();
         updateDisplay();
@@ -31,17 +31,19 @@ function renderUpgradeStore() {
 
     upgrades.forEach(upgrade => {
         const cost = getUpgradeCost(upgrade);
-        const canAfford = capyCount >= cost;
+        const canAfford = treeCount >= cost;
 
         const upgradeElement = document.createElement('div');
         upgradeElement.className = `upgrade-item ${canAfford ? '' : 'disabled'}`;
         upgradeElement.innerHTML = `
             <div class="upgrade-name">${upgrade.name}</div>
-            <div class="upgrade-cost">${formatNumber(cost)} capybaras</div>
+            <div class="upgrade-cost">${formatNumber(cost)} arbres</div>
             <div class="upgrade-description">${upgrade.description}</div>
             <div class="upgrade-count">Possédés: ${upgrade.count}</div>
             <div class="purchase-buttons">
                 <button class="purchase-btn" data-upgrade-id="${upgrade.id}" data-amount="1">Acheter</button>
+                <button class="purchase-btn" data-upgrade-id="${upgrade.id}" data-amount="10">Acheter 10</button>
+                <button class="purchase-btn" data-upgrade-id="${upgrade.id}" data-amount="100">Acheter 100</button>
             </div>
         `;
 

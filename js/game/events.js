@@ -1,26 +1,26 @@
 // game/events.js - Événements spéciaux
 
-// Fonction pour générer un capybara doré aléatoire
-function spawnGoldenCapy() {
-    if (goldenCapyActive || Math.random() > 0.1) return; // 10% de chance toutes les 30 secondes
+// Fonction pour générer un arbre doré aléatoire
+function spawnGoldenTree() {
+    if (goldenTreeActive || Math.random() > 0.1) return; // 10% de chance toutes les 30 secondes
 
-    goldenCapyActive = true;
+    goldenTreeActive = true;
 
-    const goldenCapy = document.createElement('img');
-    goldenCapy.className = 'golden-capy';
-    goldenCapy.src = 'https://via.placeholder.com/80x80/FFD700/000000?text=Capy'; // Remplacer par une image de capybara dorée
+    const goldenTree = document.createElement('img');
+    goldenTree.className = 'golden-tree';
+    goldenTree.src = 'Capy-Clicker/assets/golden-tree'; // Remplacer par une image d'arbre doré
 
     // Position aléatoire sur l'écran
     const viewportWidth = window.innerWidth - 100;
     const viewportHeight = window.innerHeight - 100;
 
-    goldenCapy.style.left = `${Math.random() * viewportWidth}px`;
-    goldenCapy.style.top = `${Math.random() * viewportHeight}px`;
+    goldenTree.style.left = `${Math.random() * viewportWidth}px`;
+    goldenTree.style.top = `${Math.random() * viewportHeight}px`;
 
-    goldenCapy.addEventListener('click', () => {
+    goldenTree.addEventListener('click', () => {
         // Bonus aléatoire
-        const bonus = Math.floor(capyCount * 0.1) + 100;
-        capyCount += bonus;
+        const bonus = Math.floor(treeCount * 0.1) + 100;
+        treeCount += bonus;
 
         // Débloquer la réalisation
         const goldenFinderAchievement = achievements.find(a => a.id === 'golden-finder');
@@ -30,23 +30,23 @@ function spawnGoldenCapy() {
             showNotification('🏆 Réalisation débloquée: Chercheur d\'Or');
         }
 
-        showNotification(`✨ Capybara doré! +${formatNumber(bonus)} capybaras!`);
-        playSound('goldenCapy');
+        showNotification(`✨ Arbre doré! +${formatNumber(bonus)} arbres!`);
+        playSound('goldenTree');
         updateDisplay();
 
-        goldenCapy.remove();
-        goldenCapyActive = false;
+        goldenTree.remove();
+        goldenTreeActive = false;
     });
 
     // Disparaît après 10 secondes
     setTimeout(() => {
-        if (document.body.contains(goldenCapy)) {
-            goldenCapy.remove();
-            goldenCapyActive = false;
+        if (document.body.contains(goldenTree)) {
+            goldenTree.remove();
+            goldenTreeActive = false;
         }
     }, 10000);
 
-    document.body.appendChild(goldenCapy);
+    document.body.appendChild(goldenTree);
 }
 
 // Fonction pour créer un événement spécial aléatoire
@@ -57,39 +57,39 @@ function createSpecialEvent() {
 
     const events = [
         {
-            name: 'Frénésie de Capybaras',
+            name: 'Frénésie Forestière',
             description: 'Double votre production par clic pendant 30 secondes!',
             action: () => {
-                const originalClickPower = capysPerClick;
-                capysPerClick *= 2;
+                const originalClickPower = treesPerClick;
+                treesPerClick *= 2;
 
                 setTimeout(() => {
-                    capysPerClick = originalClickPower;
-                    showNotification('La frénésie de Capybaras est terminée!');
+                    treesPerClick = originalClickPower;
+                    showNotification('La frénésie forestière est terminée!');
                 }, 30000);
             }
         },
         {
-            name: 'Ruée vers les Capybaras',
+            name: 'Pousse Accélérée',
             description: 'Double votre production passive pendant 60 secondes!',
             action: () => {
-                const originalPerSecond = capysPerSecond;
-                capysPerSecond *= 2;
+                const originalPerSecond = treesPerSecond;
+                treesPerSecond *= 2;
 
                 setTimeout(() => {
-                    capysPerSecond = originalPerSecond;
-                    showNotification('La ruée vers les Capybaras est terminée!');
+                    treesPerSecond = originalPerSecond;
+                    showNotification('La croissance accélérée est terminée!');
                 }, 60000);
             }
         },
         {
-            name: 'Pluie de Capybaras',
-            description: 'Recevez immédiatement un bonus de capybaras!',
+            name: 'Pluie Forestière',
+            description: 'Recevez immédiatement un bonus d\'arbres!',
             action: () => {
-                const bonus = Math.floor(capyCount * 0.2) + 200;
-                capyCount += bonus;
+                const bonus = Math.floor(treeCount * 0.2) + 200;
+                treeCount += bonus;
                 updateDisplay();
-                showNotification(`Vous avez reçu ${formatNumber(bonus)} capybaras!`);
+                showNotification(`Vous avez reçu ${formatNumber(bonus)} arbres!`);
             }
         }
     ];

@@ -1,17 +1,17 @@
 // ui/display.js - Fonctions d'affichage
 
 // Éléments DOM
-const capyImage = document.getElementById('capy');
-const capyCountDisplay = document.getElementById('capy-count');
-const capysPerSecondDisplay = document.getElementById('capys-per-second');
+const treeImage = document.getElementById('tree');
+const treeCountDisplay = document.getElementById('tree-count');
+const treesPerSecondDisplay = document.getElementById('trees-per-second');
 const soundToggle = document.getElementById('sound-toggle');
 const saveButton = document.getElementById('save-game');
 const resetButton = document.getElementById('reset-game');
 
 // Fonction pour mettre à jour l'affichage
 function updateDisplay() {
-    capyCountDisplay.textContent = formatNumber(capyCount);
-    capysPerSecondDisplay.textContent = formatNumber(capysPerSecond) + ' par seconde';
+    treeCountDisplay.textContent = formatNumber(treeCount);
+    treesPerSecondDisplay.textContent = formatNumber(treesPerSecond) + ' par seconde';
 }
 
 // Fonction pour mettre à jour le bouton de son
