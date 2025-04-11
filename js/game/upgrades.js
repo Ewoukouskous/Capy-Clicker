@@ -42,8 +42,6 @@ function renderUpgradeStore() {
             <div class="upgrade-count">Possédés: ${upgrade.count}</div>
             <div class="purchase-buttons">
                 <button class="purchase-btn" data-upgrade-id="${upgrade.id}" data-amount="1">Acheter</button>
-                <button class="purchase-btn" data-upgrade-id="${upgrade.id}" data-amount="10">Acheter 10</button>
-                <button class="purchase-btn" data-upgrade-id="${upgrade.id}" data-amount="100">Acheter 100</button>
             </div>
         `;
 
