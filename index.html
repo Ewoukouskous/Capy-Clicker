@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Capy Clicker</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="game-container">
+    <header>
+        <h1>Capy Clicker</h1>
+        <div class="score-container">
+            <span id="capy-count">0</span> capybaras
+            <div id="capys-per-second">0 par seconde</div>
+        </div>
+        <div class="save-buttons">
+            <button id="save-game">Sauvegarder</button>
+            <button id="reset-game">Réinitialiser</button>
+        </div>
+    </header>
+
+    <main>
+        <div class="clicker-area">
+            <img id="capy" src="assets/capybara.png" alt="Capybara">
+        </div>
+    </main>
+
+    <section class="store-container">
+        <h2>Boutique</h2>
+        <div id="upgrade-store"></div>
+    </section>
+
+    <section class="achievements-container">
+        <h2>Réalisations</h2>
+        <div id="achievements-list"></div>
+    </section>
+</div>
+
+<button id="sound-toggle" class="sound-toggle">🔊</button>
+
+<!-- Fichiers JavaScript -->
+<script src="js/variables.js"></script>
+<script src="js/utils.js"></script>
+<script src="js/data/upgrades.js"></script>
+<script src="js/data/achievements.js"></script>
+<script src="js/ui/display.js"></script>
+<script src="js/ui/animations.js"></script>
+<script src="js/ui/notifications.js"></script>
+<script src="js/game/clicker.js"></script>
+<script src="js/game/upgrades.js"></script>
+<script src="js/game/achievements.js"></script>
+<script src="js/game/events.js"></script>
+<script src="js/save/saveManager.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
